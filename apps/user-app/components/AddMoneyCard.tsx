@@ -22,7 +22,7 @@ export const AddMoney = () => {
     return <Card title="Add Money">
         <div className="w-full">
             <TextInput label={"Amount"} placeholder={"Amount"} onChange={(value) => {
-
+                setAmount(Number(value))
             }} />
             <div className="py-4 text-left">
                 Bank
@@ -37,7 +37,6 @@ export const AddMoney = () => {
             <div className="flex justify-center pt-4">
                 <Button onClick={async () => {
                     await createOnRampTransaction(amount, provider);
-
                     window.location.href = redirectUrl || "";
                 }}>
                     Add Money
